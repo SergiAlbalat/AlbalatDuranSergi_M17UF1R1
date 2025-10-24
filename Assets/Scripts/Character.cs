@@ -1,16 +1,11 @@
 using UnityEngine;
+[RequireComponent (typeof(MoveBehaviour))]
 
-public class Player : MonoBehaviour
+public class Character : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected MoveBehaviour _mb;
+    protected void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _mb = GetComponent<MoveBehaviour>();
     }
 }
