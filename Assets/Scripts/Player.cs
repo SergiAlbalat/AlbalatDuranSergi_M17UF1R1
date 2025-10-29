@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Player : Character, InputSystem_Actions.IPlayerActions
 {
     private InputSystem_Actions _actions;
+    private Vector2 _movement;
     private void Awake()
     {
         base.Awake();
@@ -18,9 +19,13 @@ public class Player : Character, InputSystem_Actions.IPlayerActions
     {
         _actions.Disable();
     }
+    private void FixedUpdate()
+    {
+        _mb.Move(_movement);
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
-        _mb.Move(context.ReadValue<Vector2>());
+        _movement = context.ReadValue<Vector2>();
     }
     public void OnJump(InputAction.CallbackContext context)
     {

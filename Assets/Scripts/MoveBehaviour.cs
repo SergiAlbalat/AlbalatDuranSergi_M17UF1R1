@@ -11,7 +11,7 @@ public class MoveBehaviour : MonoBehaviour
     }
     public void Move(Vector2 direction)
     {
-        _rb.linearVelocity = direction.normalized * speed;
+        _rb.linearVelocity = new Vector2 (direction.normalized.x * speed, _rb.linearVelocity.y);
         _animation.RunAnimation(direction);
     }
 }
