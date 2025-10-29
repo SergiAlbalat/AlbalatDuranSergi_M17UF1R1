@@ -18,4 +18,12 @@ public class AnimationBehaviour : MonoBehaviour
             _spriteRenderer.flipX = true;
         _animator.SetFloat("Velocity", direction.magnitude);
     }
+    public void FallAnimation(Rigidbody2D direction)
+    {
+        if(direction.gravityScale > 0)
+            _spriteRenderer.flipY = false;
+        else if(direction.gravityScale < 0)
+            _spriteRenderer.flipY = true;
+        _animator.SetFloat("FallSpeed", direction.linearVelocityY);
+    }
 }
