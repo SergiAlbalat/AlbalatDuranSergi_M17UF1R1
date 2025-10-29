@@ -29,6 +29,6 @@ public class Player : Character, InputSystem_Actions.IPlayerActions
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        
+        _mb.ChangeGravity();
     }
 }

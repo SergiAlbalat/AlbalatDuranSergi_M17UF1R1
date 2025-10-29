@@ -14,4 +14,8 @@ public class MoveBehaviour : MonoBehaviour
         _rb.linearVelocity = new Vector2 (direction.normalized.x * speed, _rb.linearVelocity.y);
         _animation.RunAnimation(direction);
     }
+    public void ChangeGravity()
+    {
+        _rb.gravityScale = -_rb.gravityScale;
+    }
 }
