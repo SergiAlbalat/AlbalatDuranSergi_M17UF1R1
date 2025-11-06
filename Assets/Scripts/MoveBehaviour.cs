@@ -4,13 +4,22 @@ public class MoveBehaviour : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private AnimationBehaviour _animation;
-    private bool _gravity = true;
     private RaycastHit2D _ground;
+    private bool _gravity = true;
+    public LayerMask groundMask;
     [SerializeField] private float speed = 3f;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animation = GetComponent<AnimationBehaviour>();
+    }
+    private void Update()
+    {
+        _animation.FallAnimation(_ground.collider);
+    }
+    private void FixedUpdate()
+    {
+        _ground = Physics2D.Raycast(_rb.position, -transform.up, 0.65f, groundMask);
     }
     public void Move(Vector2 direction)
     {
@@ -19,16 +28,13 @@ public class MoveBehaviour : MonoBehaviour
     }
     public void ChangeGravity()
     {
-        if (_gravity)
-            _ground = Physics2D.Raycast(_rb.position, Vector2.down, 1f);
-        else
-            _ground = Physics2D.Raycast(_rb.position, Vector2.up, 1f);
-        Debug.DrawRay(_rb.position, new Vector2(_rb.position.x, _rb.position.y + 1f));
-        if (_ground.collider.gameObject.layer == 6)
+        if (_ground.collider != null)
         {
-            _gravity = !_gravity;
             _rb.gravityScale = -_rb.gravityScale;
-            _animation.FallAnimation(_rb);
+            float rotation = _gravity ? 180f : 0f;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+            _gravity = !_gravity;
+            _animation.FlipSpriteX();
         }
     }
 }

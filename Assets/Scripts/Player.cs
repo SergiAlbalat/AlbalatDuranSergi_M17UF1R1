@@ -22,6 +22,7 @@ public class Player : Character, InputSystem_Actions.IPlayerActions
     private void FixedUpdate()
     {
         _mb.Move(_movement);
+        Debug.DrawRay(transform.position, -transform.up * 0.65f, Color.red);
     }
     public void OnMove(InputAction.CallbackContext context)
     {
