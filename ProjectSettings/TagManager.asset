@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Spike
+  - Dungeon
+  - Bullet
   layers:
   - Default
   - TransparentFX

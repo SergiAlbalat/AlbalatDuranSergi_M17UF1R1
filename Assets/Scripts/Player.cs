@@ -42,4 +42,9 @@ public class Player : Character, InputSystem_Actions.IPlayerActions, IKillable
         if (collision.CompareTag("Spike"))
             Kill();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Bullet"))
+            Kill();
+    }
 }

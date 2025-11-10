@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+[RequireComponent(typeof(Rigidbody2D))]
 public class MoveBehaviour : MonoBehaviour
 {
     private Rigidbody2D _rb;
@@ -15,7 +16,8 @@ public class MoveBehaviour : MonoBehaviour
     }
     private void Update()
     {
-        _animation.FallAnimation(_ground.collider);
+        if(_animation != null)
+            _animation.FallAnimation(_ground.collider);
     }
     private void FixedUpdate()
     {
@@ -24,7 +26,12 @@ public class MoveBehaviour : MonoBehaviour
     public void Move(Vector2 direction)
     {
         _rb.linearVelocity = new Vector2 (direction.normalized.x * speed, _rb.linearVelocity.y);
-        _animation.RunAnimation(direction);
+        if(_animation != null) 
+            _animation.RunAnimation(direction);
+    }
+    public void Fly(Vector2 direction)
+    {
+        _rb.linearVelocity = direction * speed;
     }
     public void ChangeGravity()
     {
