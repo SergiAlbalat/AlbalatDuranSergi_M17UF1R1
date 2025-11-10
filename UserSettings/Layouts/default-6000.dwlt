@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 109
+  controlID: 74
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 75
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 51
+  controlID: 42
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -372,8 +372,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -386,18 +386,18 @@ MonoBehaviour:
       y: 21
       width: 333.3333
       height: 283
-    m_Scale: {x: 1.5, y: 1.5}
-    m_Translation: {x: 166.66666, y: 141.5}
+    m_Scale: {x: 1.5899179, y: 1.5899179}
+    m_Translation: {x: 156.67578, y: 133.01775}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -111.11111
-      y: -94.333336
-      width: 222.22221
-      height: 188.66667
+      x: -98.54331
+      y: -83.66328
+      width: 209.65442
+      height: 177.99661
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 499.99997, y: 456}
@@ -954,9 +954,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 32.35779, y: 3.4203641, z: -0.04878215}
+    m_Target: {x: 43.687862, y: 6.4528117, z: 0.03210421}
     speed: 2
-    m_Value: {x: 32.35779, y: 3.4203641, z: -0.04878215}
+    m_Value: {x: 43.687862, y: 6.4528117, z: 0.03210421}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1006,9 +1006,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.996193
+    m_Target: 5.907554
     speed: 2
-    m_Value: 13.996193
+    m_Value: 5.907554
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1161,7 +1161,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1171,16 +1171,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\sergi\OneDrive\Escriptori\Ejercicios SMX\Future\Git\AlbalatDuranSergi_M17UF1R1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 65.33334}
-    m_SelectedIDs: f4bf0000
-    m_LastClickedID: 49140
-    m_ExpandedIDs: 000000009cbe0000
+    m_SelectedIDs: dabf0000
+    m_LastClickedID: 49114
+    m_ExpandedIDs: 00000000a8be0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1209,7 +1209,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009cbe0000
+    m_ExpandedIDs: 00000000a8be0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
