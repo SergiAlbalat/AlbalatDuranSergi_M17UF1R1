@@ -13532,6 +13532,7 @@ GameObject:
   - component: {fileID: 1217090567}
   - component: {fileID: 1217090568}
   - component: {fileID: 1217090569}
+  - component: {fileID: 1217090570}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -13692,7 +13693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00431b4a3ecc7164a94d3d1819548791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  speed: 1
 --- !u!61 &1217090568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13766,6 +13766,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1217090570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217090562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024101816ebe6254da4ebb51f2dc6daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveBehaviour
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  speed: 4
 --- !u!1 &1247637129
 GameObject:
   m_ObjectHideFlags: 0

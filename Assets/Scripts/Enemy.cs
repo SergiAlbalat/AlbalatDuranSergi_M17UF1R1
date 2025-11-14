@@ -1,22 +1,16 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    [SerializeField] private float speed = 1f;
-    private Rigidbody2D _rb;
     private Transform _playerPosition;
     private bool _chasing = false;
-    private void Awake()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-    }
     private void FixedUpdate()
     {
         if(_chasing && _playerPosition != null)
         {
             Vector2 direction = _playerPosition.position - transform.position;
-            _rb.linearVelocity = new Vector2(direction.x * speed, _rb.linearVelocity.y);
+            _mb.Move(direction);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
