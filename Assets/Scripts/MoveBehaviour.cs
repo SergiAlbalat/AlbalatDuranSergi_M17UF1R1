@@ -27,7 +27,7 @@ public class MoveBehaviour : MonoBehaviour
     {
         _rb.linearVelocity = new Vector2 (direction.normalized.x * speed, _rb.linearVelocity.y);
         if(_animation != null) 
-            _animation.RunAnimation(direction);
+            _animation.RunAnimation(new Vector2(direction.normalized.x, _rb.linearVelocity.y));
     }
     public void Fly(Vector2 direction)
     {
