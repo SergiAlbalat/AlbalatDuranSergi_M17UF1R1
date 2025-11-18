@@ -44,4 +44,14 @@ public class MoveBehaviour : MonoBehaviour
             _animation.FlipSpriteX();
         }
     }
+    public void TeleportCeiling(Vector2 ceilingPosition)
+    {
+        ChangeGravity();
+        Vector2 newPosition;
+        if (_gravity)
+            newPosition = new Vector2(ceilingPosition.x, ceilingPosition.y + 0.5f);
+        else
+            newPosition = new Vector2(ceilingPosition.x, ceilingPosition.y - 0.5f);
+        transform.position = newPosition;
+    }
 }
