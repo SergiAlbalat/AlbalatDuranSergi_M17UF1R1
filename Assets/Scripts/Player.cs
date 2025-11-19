@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : Character, InputSystem_Actions.IPlayerActions
+public class Player : Character, InputSystem_Actions.IPlayerActions, IKillable
 {
     private InputSystem_Actions _actions;
     private Vector2 _movement;
+    [SerializeField] private Transform _spawnPoint;
     private void Awake()
     {
         base.Awake();
@@ -31,5 +32,19 @@ public class Player : Character, InputSystem_Actions.IPlayerActions
     public void OnJump(InputAction.CallbackContext context)
     {
         _mb.ChangeGravity();  
+    }
+    public void Kill()
+    {
+        transform.position = _spawnPoint.position;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spike"))
+            Kill();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Bullet") || collision.collider.CompareTag("Enemy"))
+            Kill();
     }
 }

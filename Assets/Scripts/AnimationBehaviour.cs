@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AnimationBehaviour : MonoBehaviour
 {
+    [SerializeField] private bool fall;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private bool _characterRight = false;
@@ -18,11 +19,12 @@ public class AnimationBehaviour : MonoBehaviour
             _spriteRenderer.flipX = _characterRight;
         else if(direction.x < 0)
             _spriteRenderer.flipX = _characterLeft;
-        _animator.SetFloat("Velocity", direction.magnitude);
+        _animator.SetFloat("Velocity", Mathf.Abs(direction.x));
     }
     public void FallAnimation(bool ground)
     {
-        _animator.SetBool("Ground", ground);
+        if(fall)
+            _animator.SetBool("Ground", ground);
     }
     public void FlipSpriteX()
     {
