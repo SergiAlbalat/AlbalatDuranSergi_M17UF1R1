@@ -13789,7 +13789,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
-  speed: 4
+  speed: 2
 --- !u!114 &1217090571
 MonoBehaviour:
   m_ObjectHideFlags: 0
