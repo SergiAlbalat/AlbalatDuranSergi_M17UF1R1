@@ -23,8 +23,7 @@ public class Enemy : Character
         else
             direction = Vector2.zero;
         _mb.Move(direction);
-        //Debug.DrawRay(transform.position, transform.up * 15, Color.blue);
-        Debug.DrawRay(transform.position, new Vector2(transform.position.x, transform.position.y + ceiling.point.y), Color.yellow);
+        Debug.DrawRay(transform.position, transform.up * 15, Color.blue);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
