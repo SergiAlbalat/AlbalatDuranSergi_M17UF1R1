@@ -16297,7 +16297,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7328174, y: -0.14547288, z: -10}
+  m_LocalPosition: {x: 2.7328172, y: -0.145473, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16445,7 +16445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476929377575713099, guid: 5c06a3417afddbe44bc1c59c3932af83, type: 3}
       propertyPath: m_Name
-      value: Bullet (1)
+      value: BouncyBullet2
       objectReference: {fileID: 0}
     - target: {fileID: 5476929377575713099, guid: 5c06a3417afddbe44bc1c59c3932af83, type: 3}
       propertyPath: m_Layer
@@ -24223,6 +24223,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1970252457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970252459}
+  - component: {fileID: 1970252458}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1970252458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970252457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ddff0649dcf594bafca68a8791f85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
+  bulletPrefab: {fileID: 1699783403994910985, guid: c9c6d67a57c2642489c9dee85bf96e4d, type: 3}
+--- !u!4 &1970252459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970252457}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 48.73, y: 3.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093651751
 GameObject:
   m_ObjectHideFlags: 0
@@ -24614,7 +24659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5476929377575713099, guid: 5c06a3417afddbe44bc1c59c3932af83, type: 3}
       propertyPath: m_Name
-      value: Bullet
+      value: BouncyBullet
       objectReference: {fileID: 0}
     - target: {fileID: 5476929377575713099, guid: 5c06a3417afddbe44bc1c59c3932af83, type: 3}
       propertyPath: m_Layer
@@ -24701,3 +24746,4 @@ SceneRoots:
   - {fileID: 522047041}
   - {fileID: 1745818914}
   - {fileID: 269931130}
+  - {fileID: 1970252459}
