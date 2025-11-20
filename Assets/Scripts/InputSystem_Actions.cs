@@ -214,6 +214,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""1260f464-6880-461f-8fa4-a123aead02ae"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,6 +234,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39e2a599-1105-493f-b488-4a8affdfb2f6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""NextDialogue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -301,6 +321,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
+        m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -490,6 +511,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Pause;
+    private readonly InputAction m_UI_NextDialogue;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -505,6 +527,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/NextDialogue".
+        /// </summary>
+        public InputAction @NextDialogue => m_Wrapper.m_UI_NextDialogue;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -534,6 +560,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @NextDialogue.started += instance.OnNextDialogue;
+            @NextDialogue.performed += instance.OnNextDialogue;
+            @NextDialogue.canceled += instance.OnNextDialogue;
         }
 
         /// <summary>
@@ -548,6 +577,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @NextDialogue.started -= instance.OnNextDialogue;
+            @NextDialogue.performed -= instance.OnNextDialogue;
+            @NextDialogue.canceled -= instance.OnNextDialogue;
         }
 
         /// <summary>
@@ -682,5 +714,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "NextDialogue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

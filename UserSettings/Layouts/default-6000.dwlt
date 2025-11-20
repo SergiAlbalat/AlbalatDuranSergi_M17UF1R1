@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 63
+  controlID: 126
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 64
+  controlID: 80
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 65
+  controlID: 71
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -582,10 +582,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 21.666656}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5e99ffff80a1ffff7ca9ffff0aabffff0ad5ffffb2d9ffff22dfffff18e0ffff00e1ffffcae1ffff02fbffffacbd000048cb0000
+      m_ExpandedIDs: 02fbffffecbd0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -814,7 +814,7 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 1
       containerId: overlay-container--right
-      displayed: 1
+      displayed: 0
       id: Scene View/Open Tile Palette
       index: 0
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-167.99993896484376,"y":-75.33332824707031},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
@@ -1091,9 +1091,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 73.20248, y: 11.980171, z: 0.75423574}
+    m_Target: {x: 0.6354709, y: -0.97506607, z: -0.027543372}
     speed: 2
-    m_Value: {x: 73.20248, y: 11.980171, z: 0.75423574}
+    m_Value: {x: 0.6354709, y: -0.97506607, z: -0.027543372}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1129,9 +1129,9 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1143,9 +1143,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.968702
+    m_Target: 3.6203573
     speed: 2
-    m_Value: 5.968702
+    m_Value: 3.6203573
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1226,7 +1226,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Sprites/Player
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1236,15 +1236,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Sprites/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\sergi\OneDrive\Escriptori\Ejercicios SMX\Future\Git\AlbalatDuranSergi_M17UF1R1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 53}
-    m_SelectedIDs: 32c60000
-    m_LastClickedID: 50738
+    scrollPos: {x: 0, y: 106.00003}
+    m_SelectedIDs: 12cd0000
+    m_LastClickedID: 52498
     m_ExpandedIDs: 0000000096bf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

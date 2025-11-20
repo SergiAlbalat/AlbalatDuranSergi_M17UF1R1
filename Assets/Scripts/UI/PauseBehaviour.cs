@@ -45,4 +45,9 @@ public class PauseBehaviour : MonoBehaviour, InputSystem_Actions.IUIActions
         if (context.performed)
             TogglePause();
     }
+
+    public void OnNextDialogue(InputAction.CallbackContext context)
+    {
+        
+    }
 }
