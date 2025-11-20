@@ -47,4 +47,12 @@ public class Player : Character, InputSystem_Actions.IPlayerActions, IKillable
         if (collision.collider.CompareTag("Bullet") || collision.collider.CompareTag("Enemy"))
             Kill();
     }
+    public void StopPlayer()
+    {
+        _actions.Disable();
+    }
+    public void ResumePlayer()
+    {
+        _actions.Enable();
+    }
 }
