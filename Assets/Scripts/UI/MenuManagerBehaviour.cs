@@ -12,4 +12,8 @@ public class MenuManagerBehaviour : MonoBehaviour
         Application.Quit();
         Debug.Log("Juego cerrado");
     }
+    public void EndGame()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }
