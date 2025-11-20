@@ -17,13 +17,6 @@ public class DialogueZone : MonoBehaviour, InputSystem_Actions.IUIActions
     {
         _actions = new InputSystem_Actions();
         _actions.UI.SetCallbacks(this);
-    }
-    private void OnEnable()
-    {
-        _actions.Enable();
-    }
-    private void OnDisable()
-    {
         _actions.Disable();
     }
     public void OnNextDialogue(InputAction.CallbackContext context)
@@ -45,6 +38,7 @@ public class DialogueZone : MonoBehaviour, InputSystem_Actions.IUIActions
         {
             _inDialogue = true;
             _activated = true;
+            _actions.Enable();
         }
     }
     private void Update()
@@ -64,6 +58,7 @@ public class DialogueZone : MonoBehaviour, InputSystem_Actions.IUIActions
                 dB.CloseDialogue();
                 player.ResumePlayer();
                 _inDialogue = false;
+                _actions.Disable();
             }
         }
     }
