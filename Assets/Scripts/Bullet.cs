@@ -1,20 +1,24 @@
 using UnityEngine;
-
+[RequireComponent (typeof(MoveBehaviour))]
 public class Bullet : MonoBehaviour
 {
-    private MoveBehaviour _mb;
+    private MoveBehaviour _mB;
     [SerializeField] private Vector2 direction;
+    private BulletPool bulletPool;
     private void Awake()
     {
-        _mb = GetComponent<MoveBehaviour>();
+        _mB = GetComponent<MoveBehaviour>();
+        bulletPool = FindAnyObjectByType<BulletPool>();
     }
     private void FixedUpdate()
     {
-        _mb.Fly(direction);
+        _mB.Fly(direction);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Dungeon"))
-            direction = -direction;
+        {
+            bulletPool.StoreBullet(this);
+        }
     }
 }

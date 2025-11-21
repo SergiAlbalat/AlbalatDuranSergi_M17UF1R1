@@ -6,6 +6,9 @@ public class Player : Character, InputSystem_Actions.IPlayerActions, IKillable
     private InputSystem_Actions _actions;
     private Vector2 _movement;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dieSound;
+
     private void Awake()
     {
         base.Awake();
@@ -31,11 +34,17 @@ public class Player : Character, InputSystem_Actions.IPlayerActions, IKillable
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        _mb.ChangeGravity();  
+        if (context.performed)
+        {
+            _mb.ChangeGravity();
+           
+        }
     }
     public void Kill()
     {
         transform.position = _spawnPoint.position;
+        if(audioSource != null)
+            audioSource.PlayOneShot(dieSound);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

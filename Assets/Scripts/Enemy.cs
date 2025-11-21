@@ -1,5 +1,6 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enemy : Character
 {
@@ -7,6 +8,9 @@ public class Enemy : Character
     private bool _chasing = false;
     private RaycastHit2D ceiling;
     [SerializeField] private LayerMask mapMask;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip teleportSound;
+
     private void Start()
     {
         InvokeRepeating("Power", 5, 5);
@@ -47,6 +51,8 @@ public class Enemy : Character
         {
             Vector2 ceilingPosition = new Vector2(transform.position.x, ceiling.point.y);
             _mb.TeleportCeiling(ceiling.point);
+            if (audioSource != null)
+                audioSource.PlayOneShot(teleportSound);
         }
     }
 }

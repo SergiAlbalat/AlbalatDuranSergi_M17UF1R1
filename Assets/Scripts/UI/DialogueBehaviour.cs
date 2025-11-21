@@ -6,7 +6,6 @@ public class DialogueBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogue;
-    private bool _nextDialogue = false;
     private void Awake()
     {
         dialoguePanel.SetActive(false);
