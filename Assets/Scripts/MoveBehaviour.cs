@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveBehaviour : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MoveBehaviour : MonoBehaviour
     private bool _gravity = true;
     public LayerMask groundMask;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpSound;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -42,6 +45,8 @@ public class MoveBehaviour : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, rotation);
             _gravity = !_gravity;
             _animation.FlipSpriteX();
+            if (audioSource != null)
+                audioSource.PlayOneShot(jumpSound);
         }
     }
     public void TeleportCeiling(Vector2 ceilingPosition)
@@ -53,5 +58,6 @@ public class MoveBehaviour : MonoBehaviour
         else
             newPosition = new Vector2(ceilingPosition.x, ceilingPosition.y - 0.5f);
         transform.position = newPosition;
+        
     }
 }

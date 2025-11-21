@@ -11,7 +11,6 @@ public class BulletPool : MonoBehaviour
     }
     private Bullet ShootBullet()
     {
-        Debug.Log(bullets.Count);
         if(bullets.Count > 0)
         {
             Bullet bullet = bullets.Pop();
